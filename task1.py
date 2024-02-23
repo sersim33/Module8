@@ -1,18 +1,22 @@
 
-
 from datetime import datetime
 
-
 def get_days_from_today(date):
-   
-    date_string = '2020-10-09'
-    date = datetime.strptime(date_string, '%Y-%m-%d')
-    current_datetime = datetime.now()
     
-    difference = current_datetime - date
+    year, month, day = map(int, date.split('-'))
+    
+    current_date = datetime.now().date()
+    
+    specified_date = datetime(year, month, day).date()
+    
+    difference = current_date - specified_date
+    
+    return difference.days
+    
 
+date = "2019-10-09"
+print(get_days_from_today(date))
 
-    return difference
 
     
-print(get_days_from_today("2021-10-09"))
+
