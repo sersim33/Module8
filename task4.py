@@ -15,8 +15,8 @@ def get_random_winners(quantity, participants):
 
     keys_list = list(participants.keys())
     random.shuffle(keys_list)
+    random_winners = random.sample(keys_list, k=quantity)
     
-    
-    return keys_list
+    return random_winners
    
-print(get_random_winners(2, participants))  
+print(get_random_winners(1, participants))   
